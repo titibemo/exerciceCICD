@@ -37,16 +37,3 @@ jobs:
       - name: Move frontend to backend
         run: |
           mv frontvue/dist/* backexpress/public/
-
-      # - name: Deploy via FTP
-      #   uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      #   with:
-      #     server: 
-      #     username: 03@01-web.formation-adapeco-sofip.com
-      #     password: aqFbABLGFz6wVhLe
-      #     local-dir: backNul/
-      
-      # - name: Install dependencies
-      #   run: |
-      #     cd backNul
-      #     node server.js
