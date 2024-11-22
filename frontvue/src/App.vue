@@ -3,15 +3,6 @@
     colorNavBar='#111111'
   ></Navbar>
   <router-view/>
-
-
-
-
-
-  <p>
- d
-    
-  </p>
 </template>
 
 <script setup>
