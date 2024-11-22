@@ -1,7 +1,7 @@
 <template>
   <div class="top">
     <div class="nav">
-      <div :style="{ backgroundColor: colorNavBar }">
+      <div class="containerNavBar" :style="{ backgroundColor: colorNavBar }">
           <img src="./../assets/burger.svg" alt="burger" class="icon"
             @click="menu" @keydown.enter="menu" @keydown.space="menu">
             <transition name="slide-right">

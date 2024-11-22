@@ -33,10 +33,13 @@ jobs:
           pwd
           npm install
       
-      - name: Run ESLint
+      - name: Run ESLint (it works !)
         run: |
           cd frontvue
           npx eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0
+      
+      - name: Run Tests
+        run: npm run test
 
       - name: build front (dist)
         run: |
