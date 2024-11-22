@@ -39,6 +39,7 @@ jobs:
           eslint . --ext .js,.jsx,.ts,.tsx
 
       - name: build front (dist)
+        run: |
           cd frontvue
           npm run build
 
