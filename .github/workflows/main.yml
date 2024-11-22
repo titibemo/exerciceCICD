@@ -39,7 +39,9 @@ jobs:
           npx eslint . --ext .js,.jsx,.ts,.tsx --max-warnings=0
       
       - name: Run Tests
-        run: npm run test
+        run: |
+          cd frontvue
+          npm run test
 
       - name: build front (dist)
         run: |
