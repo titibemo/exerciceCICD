@@ -34,10 +34,6 @@ jobs:
           npm install
           npm run build
 
-      - name: Check contents of frontvue/dist/
-         run: |
-          ls -la frontvue/dist/
-
       - name: Move frontend to backend
         run: |
           mv frontvue/dist/ backexpress/public/
