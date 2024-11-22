@@ -24,30 +24,29 @@ jobs:
       - name: Install dependencies
         run: |
           pwd
-          cd backNul
+          cd backexpress
           npm install
 
       - name: Install dependencies and build
         run: |
-          cd vite-thierry
+          cd frontvue
           pwd
           npm install
           npm run build
 
       - name: Move frontend to backend
         run: |
-          mv vite-thierry/dist/ backNul/public/
+          mv frontvue/dist/* backexpress/public/
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
-        with:
-          server: ftp.abhi4136.odns.fr
-          username: 03@01-web.formation-adapeco-sofip.com
-          password: aqFbABLGFz6wVhLe
-          local-dir: backNul/
-          server-dir: /03/
+      # - name: Deploy via FTP
+      #   uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      #   with:
+      #     server: 
+      #     username: 03@01-web.formation-adapeco-sofip.com
+      #     password: aqFbABLGFz6wVhLe
+      #     local-dir: backNul/
       
-      - name: Install dependencies
-        run: |
-          cd backNul
-          node server.js
+      # - name: Install dependencies
+      #   run: |
+      #     cd backNul
+      #     node server.js
