@@ -36,4 +36,4 @@ jobs:
 
       - name: Move frontend to backend
         run: |
-          mv frontvue/dist/* backexpress/public/
+          mv frontvue/dist/ backexpress/public/
