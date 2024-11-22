@@ -36,7 +36,7 @@ jobs:
       - name: Run ESLint
         run: |
           cd frontvue
-          eslint . --ext .js,.jsx,.ts,.tsx
+          npm run lint
 
       - name: build front (dist)
         run: |
