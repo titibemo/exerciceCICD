@@ -5,12 +5,12 @@ describe('NavBar.vue', () => {
   const color = 'red';
 
   it('Should renders color', () => {
-    const wrapper = shallowMount(NavBar, { 
+    const wrapper = shallowMount(NavBar, {
       props: {
         colorNavBar: color,
-      }
+      },
     });
     const navBarColor = wrapper.find('.containerNavBar');
-    expect(navBarColor.attributes('style')).toContain('background-color: orange')
+    expect(navBarColor.attributes('style')).toContain('background-color: orange');
   });
 });
