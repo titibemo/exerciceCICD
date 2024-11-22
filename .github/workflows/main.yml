@@ -41,7 +41,7 @@ jobs:
       - name: Run Tests
         run: |
           cd frontvue
-          npm run test
+          npm run test:unit
 
       - name: build front (dist)
         run: |
