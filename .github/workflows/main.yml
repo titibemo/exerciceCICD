@@ -27,11 +27,17 @@ jobs:
           cd backexpress
           npm install
 
-      - name: Install dependencies and build
+      - name: Install dependencies
         run: |
           cd frontvue
           pwd
           npm install
+      
+      - name: Run ESLint
+        run: eslint . --ext .js,.jsx,.ts,.tsx
+
+      - name: build front (dist)
+          cd frontvue
           npm run build
 
       - name: Move frontend to backend
