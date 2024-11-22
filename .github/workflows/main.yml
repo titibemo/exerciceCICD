@@ -1,0 +1,53 @@
+name: Deploy to FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+        
+      # 1. Installer Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # 2. Installer les dépendances
+      - name: Install dependencies
+        run: |
+          pwd
+          cd backNul
+          npm install
+
+      - name: Install dependencies and build
+        run: |
+          cd vite-thierry
+          pwd
+          npm install
+          npm run build
+
+      - name: Move frontend to backend
+        run: |
+          mv vite-thierry/dist/ backNul/public/
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ftp.abhi4136.odns.fr
+          username: 03@01-web.formation-adapeco-sofip.com
+          password: aqFbABLGFz6wVhLe
+          local-dir: backNul/
+          server-dir: /03/
+      
+      - name: Install dependencies
+        run: |
+          cd backNul
+          node server.js
