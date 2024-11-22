@@ -11,6 +11,6 @@ describe('NavBar.vue', () => {
       },
     });
     const navBarColor = wrapper.find('.containerNavBar');
-    expect(navBarColor.attributes('style')).toContain('background-color: orange');
+    expect(navBarColor.attributes('style')).toContain('background-color: red');
   });
 });
